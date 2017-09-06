@@ -30,4 +30,6 @@ if __name__ == "__main__":
             i = next(c)
             for k in d:
                 df.loc[i, k] = d[k]
+	    if i % (len(data) * 5) == 0:
+		df.to_csv("vk_last_seen.csv")
         time.sleep(300)
